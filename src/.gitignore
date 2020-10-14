@@ -1,0 +1,7 @@
+*/bin/*
+*/obj/*
+.DS_Store
+.vs/*
+obj/Docker/*
+obj/Debug/*
+bin/Debug/*

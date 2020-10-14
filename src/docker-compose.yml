@@ -1,0 +1,68 @@
+version: '3.4'
+
+services:
+
+  rabbitmq:
+    image: rabbitmq:3.8.0-management
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+
+
+  course.api:
+    image: ${DOCKER_REGISTRY-}courseapi
+    build:
+      context: .
+      dockerfile: Course.Api/Dockerfile
+    links:
+      - rabbitmq
+    ports:
+      - '5000:5000'
+    restart: on-failure        
+    
+  course.feedback:
+    image: ${DOCKER_REGISTRY-}coursefeedback
+    build:
+      context: .
+      dockerfile: Course.Feedback/Dockerfile
+    links:
+      - rabbitmq
+    ports:
+      - '6000:6000'
+    restart: on-failure        
+
+
+  course.files:
+    image: ${DOCKER_REGISTRY-}coursefiles
+    build:
+      context: .
+      dockerfile: Course.Files/Dockerfile
+    links:
+      - rabbitmq
+    ports:
+      - '7000:7000'
+    restart: on-failure        
+
+
+  course.identity:
+    image: ${DOCKER_REGISTRY-}courseidentity
+    build:
+      context: .
+      dockerfile: Course.Identity/Dockerfile
+    links:
+      - rabbitmq
+    ports:
+      - '8000:8000'
+    restart: on-failure 
+
+
+  course.notification:
+    image: ${DOCKER_REGISTRY-}coursenotification
+    build:
+      context: .
+      dockerfile: Course.Notification/Dockerfile
+    links:
+      - rabbitmq
+    ports:
+      - '9000:9000'
+    restart: on-failure 
