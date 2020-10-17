@@ -23,11 +23,11 @@ namespace Course.Notification.Handlers
         public async Task HandleAsync(CoursePublished @event)
         {
             _logger.LogInformation($"2. Course published: {@event.CourseId}");
-            var command = new RegisterUserToCourse(@event.CourseId, @event.UserId);
+            var notificationEvent = new NewCourseIsPublished(@event.CourseId, @event.UserId);
             _channel.BasicPublish(exchange: "",
-                routingKey: Extensions.GetCommandQueueName<RegisterUserToCourse>(),
+                routingKey: Extensions.GetEventQueueName<NewCourseIsPublished>(),
                 basicProperties: null,
-                body: command.ObjectToByteArray());
+                body: notificationEvent.ObjectToByteArray());
         }
     }
 }

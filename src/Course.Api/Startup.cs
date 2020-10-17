@@ -28,7 +28,7 @@ namespace Course.Api
             services.AddMongoDB(Configuration);
             services.AddSingleton<ICommandHandler<PublishCourse>, PublishCourseHandler>();
             services.AddSingleton<ICommandHandler<CompleteCourse>, CompleteCourseHandler>();
-            services.AddSingleton<IEventHandler<UserRegisteredToCourse>, UserRegisteredToCourseHandler>();
+            services.AddSingleton<ICommandHandler<RegisterUserToCourse>, RegisterUserToCourseHandler>();
             services.AddSingleton<ICommandHandler<SaveFeedback>, SaveFeedbackHandler>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

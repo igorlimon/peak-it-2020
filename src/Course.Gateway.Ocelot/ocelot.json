@@ -1,0 +1,15 @@
+{
+    "Routes": [{
+        "DownstreamPathTemplate": "/Courses/publish",
+        "DownstreamScheme": "http",
+        "DownstreamHostAndPorts": [{
+            "Host": "src_course.api_1",
+            "Port": 80
+        }],
+        "UpstreamPathTemplate": "/Courses/publish",
+        "UpstreamHttpMethod": ["Post"]
+    }],
+    "GlobalConfiguration": {
+        "BaseUrl": "http://src_course.gateway_1"
+    }
+}

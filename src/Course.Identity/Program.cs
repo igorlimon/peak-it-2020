@@ -10,10 +10,10 @@ namespace Course.Identity
         {
             ServiceHost.Create<Startup>(args)
                 .UseRabbitMq()
-                .SubscribeToCommand<RegisterUserToCourse>()
-                .SubscribeToCommand<SendMaterials>()
                 .SubscribeToEvent<FeedbackSaved>()
+                .SubscribeToEvent<NotifyUserNewCourse>()
                 .SubscribeToEvent<FeedbackFormReceived>()
+                .SubscribeToEvent<NewCourseIsPublished>()
                 .Build()
                 .Run();
         }

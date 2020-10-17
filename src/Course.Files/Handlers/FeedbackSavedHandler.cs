@@ -24,7 +24,7 @@ namespace Course.Files.Handlers
 
         public async Task HandleAsync(FeedbackSaved @event)
         {
-            _logger.LogInformation($"6.1 Materials sent: {@event.FeedbackId} Course id:{@event.CourseId} UserId : {@event.UserId}");
+            _logger.LogInformation($"6.2. Materials sent: {@event.FeedbackId} Course id:{@event.CourseId} UserId : {@event.UserId}");
 
             var feedbackId = Guid.NewGuid();
             var materials = new List<string> { "Presentation" };

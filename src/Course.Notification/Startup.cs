@@ -30,6 +30,7 @@ namespace Course.Notification
             services.AddSingleton<IEventHandler<CoursePublished>, CoursePublishedHandler>(); 
             services.AddSingleton<IEventHandler<MaterialsReceived>, MaterialsReceivedHandler>();
             services.AddSingleton<ICommandHandler<SendFeedbackForm>, SendFeedbackFormHandler>();
+            services.AddSingleton<ICommandHandler<SendMaterials>, SendMaterialsHandler>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

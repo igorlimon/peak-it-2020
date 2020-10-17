@@ -10,6 +10,7 @@ namespace Course.Notification
         {
             ServiceHost.Create<Startup>(args)
                 .UseRabbitMq()
+                .SubscribeToCommand<SendMaterials>()
                 .SubscribeToEvent<CoursePublished>()
                 .SubscribeToEvent<MaterialsReceived>()
                 .SubscribeToCommand<SendFeedbackForm>()

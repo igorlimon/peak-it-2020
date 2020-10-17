@@ -4,7 +4,6 @@ using Course.Common.Events;
 using Course.Common.Mongo;
 using Course.Common.RabbitMq;
 using Course.Identity.Handlers;
-using Course.Notification.Handlers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,8 +28,7 @@ namespace Course.Identity
             services.AddJwt(Configuration);
             services.AddMongoDB(Configuration);
             services.AddRabbitMq(Configuration);
-            services.AddSingleton<ICommandHandler<RegisterUserToCourse>, RegisterUserToCourseHandler>();
-            services.AddSingleton<ICommandHandler<SendMaterials>, SendMaterialsHandler>();
+            services.AddSingleton<IEventHandler<NewCourseIsPublished>, NewCourseIsPublishedHandler>();
             services.AddSingleton<IEventHandler<FeedbackFormReceived>, FeedbackFormReceivedHandler>();
             services.AddSingleton<IEventHandler<FeedbackSaved>, FeedbackSavedHandler>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);

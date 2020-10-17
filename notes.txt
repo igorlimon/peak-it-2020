@@ -3,6 +3,4 @@ When course is published register user to the course.
 
 When user complete course send feedback form.
 
-When user received feedback form user save feedback.
-
 When feedback saved then course materials are sent to the user.

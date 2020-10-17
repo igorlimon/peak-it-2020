@@ -1,8 +1,5 @@
-using Course.Common.Commands;
 using Course.Common.Events;
-using Course.Common.RabbitMq;
 using Microsoft.Extensions.Logging;
-using RabbitMQ.Client;
 using System.Threading.Tasks;
 
 namespace Course.Notification.Handlers

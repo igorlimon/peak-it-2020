@@ -17,6 +17,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Course.Files", "Course.File
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{84E5F0DA-EA67-443C-B223-22CE6583ED23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Course.Gateway.Ocelot", "Course.Gateway.Ocelot\Course.Gateway.Ocelot.csproj", "{75F46490-66F5-440B-836C-D1C34D07CC59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,18 @@ Global
 		{84E5F0DA-EA67-443C-B223-22CE6583ED23}.Release|x64.Build.0 = Release|Any CPU
 		{84E5F0DA-EA67-443C-B223-22CE6583ED23}.Release|x86.ActiveCfg = Release|Any CPU
 		{84E5F0DA-EA67-443C-B223-22CE6583ED23}.Release|x86.Build.0 = Release|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Debug|x64.Build.0 = Debug|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Debug|x86.Build.0 = Debug|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Release|x64.ActiveCfg = Release|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Release|x64.Build.0 = Release|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Release|x86.ActiveCfg = Release|Any CPU
+		{75F46490-66F5-440B-836C-D1C34D07CC59}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

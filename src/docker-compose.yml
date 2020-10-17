@@ -18,7 +18,9 @@ services:
       - rabbitmq
     ports:
       - '5000:5000'
-    restart: on-failure        
+    restart: on-failure   
+    depends_on:
+      - rabbitmq     
     
   course.feedback:
     image: ${DOCKER_REGISTRY-}coursefeedback
@@ -29,7 +31,9 @@ services:
       - rabbitmq
     ports:
       - '6000:6000'
-    restart: on-failure        
+    restart: on-failure    
+    depends_on:
+      - rabbitmq    
 
 
   course.files:
@@ -41,7 +45,9 @@ services:
       - rabbitmq
     ports:
       - '7000:7000'
-    restart: on-failure        
+    restart: on-failure    
+    depends_on:
+      - rabbitmq    
 
 
   course.identity:
@@ -54,6 +60,8 @@ services:
     ports:
       - '8000:8000'
     restart: on-failure 
+    depends_on:
+      - rabbitmq
 
 
   course.notification:
@@ -66,3 +74,20 @@ services:
     ports:
       - '9000:9000'
     restart: on-failure 
+    depends_on:
+      - rabbitmq
+  
+  course.gateway:
+    image: ${DOCKER_REGISTRY-}coursegateway
+    build:
+      context: .
+      dockerfile: Course.Gateway.Ocelot/Dockerfile
+    ports:
+      - '10000:80'
+    restart: on-failure
+    links:
+      - course.api
+      # - course.notification
+      # - course.identity
+      # - course.files
+      # - course.feedback

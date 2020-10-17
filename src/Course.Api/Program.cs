@@ -13,7 +13,7 @@ namespace Course.Api
                 .SubscribeToCommand<PublishCourse>()
                 .SubscribeToCommand<CompleteCourse>()
                 .SubscribeToCommand<SaveFeedback>()
-                .SubscribeToEvent<UserRegisteredToCourse>()
+                .SubscribeToCommand<RegisterUserToCourse>()
                 .Build()
                 .Run();
         }
