@@ -1,5 +1,5 @@
 DDD in practice
-When course is published register user to the course.
+When course is published notify user about a new course.
 
 When user complete course send feedback form.
 
